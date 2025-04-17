@@ -1,0 +1,334 @@
+:root {
+    --pannel-background:linear-gradient(to left,aqua,rgb(2, 200, 167) );
+    --buttonHover-color:rgb(240, 238, 238);
+    --button-background:linear-gradient(to left,rgb(0, 255, 255,0.5),rgb(2, 200, 167,0.6) ,rgb(2, 200, 167,0.6) ,rgb(2, 200, 167,0.6) );
+}
+/* :root {
+    --pannel-background:rgb(205, 201, 201);
+    --button-background:rgb(124, 243, 124);
+    --buttonHover-color:rgb(20, 232, 20);
+} */
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    transition: 0.5s;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+}
+
+.userpart{
+    width: 20%;
+    height: 100%;
+}
+.userpart .alloptions{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: var(--pannel-background);
+}
+.userpart .alloptions .userprofile{
+    margin-top:4%;
+    border-radius: 40px;
+    height: 5rem;
+    width: 96%;
+    display: flex;
+    background-color: white;
+}
+.userpart .alloptions .userprofile img{
+    border-radius: 50%;
+    height: 5rem;
+    min-height: 5rem;
+    min-width: 5rem;
+    width: 5rem;
+}
+.userpart .alloptions .userprofile .data{
+    height: 100%;
+    width: 100%;
+    /* display: flex;
+    flex-wrap: wrap; */
+}
+.userpart .alloptions .userprofile .data h3,h5{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    overflow: hidden;
+    margin-left: 0.3rem;
+}
+.userpart .alloptions .userprofile .data h5{
+    width: 70%;
+    color: rgb(88, 86, 86);
+    align-items: flex-start;
+}
+.userpart .alloptions .userprofile .data h5:hover{
+    width: 100%;
+    color: rgb(88, 86, 86);
+    align-items: flex-start;
+}
+
+
+.userpart .alloptions a {
+    height: 3rem;
+    border-radius: 20px;
+    width: 96%;
+    margin: 1rem 2rem;
+}
+.userpart .alloptions a h5{
+    font-size: 18px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: black;
+}
+
+.userpart .alloptions .bottum{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-self: flex-end;
+}
+.userpart .alloptions .bottum a{
+    height: 3rem;
+    width: 96%;
+    margin: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    border-radius: 20px;
+}
+.userpart .alloptions .bottum h5{
+    height: 100%;
+    width: 100%;
+    color: black;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    justify-content: flex-start;
+    margin-left: 1rem;
+}
+
+
+
+
+.skillspart{
+    width: 100%;
+    height: 100%;
+}
+.skillspart .allcontaint{
+    height: 100%;
+    width: 100%;
+}
+.skillspart .allcontaint .nav{
+    height: 4rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid rgba(160, 159, 159, 0.626);
+}
+.skillspart .allcontaint .nav .allother,h2{
+    height: 100%;
+    margin:1rem 0rem 1rem 1rem;
+    display: flex;
+    align-items: center;
+}
+.skillspart .allcontaint .nav .allother input{
+    height: 60%;
+    width: 15rem;
+    border-radius: 20px;
+    padding: 0rem 1rem;
+    background-color: rgba(183, 237, 244, 0.489);
+}
+.skillspart .allcontaint .nav .allother a{
+    height: 60%;
+    width: fit-content;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+    margin-left: 0.5rem;
+    background:var(--button-background);
+}
+.skillspart .allcontaint .nav .allother a:hover{
+    background:linear-gradient(to left,rgb(0, 255, 255,0.3),rgb(2, 200, 167,0.4) ,rgb(2, 200, 167,0.4) ,rgb(2, 200, 167,0.4) );
+}
+.skillspart .allcontaint .nav .mess{
+    height: 2rem;
+    width: 2rem;
+    min-width: 2rem;
+    min-height: 2rem;
+    background-color: gray;
+    border-radius: 50%;
+    margin-right: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+.skillspart .allcontaint .content{
+    height:90vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+}
+.skillspart .allcontaint .content .card{
+    height: 18rem;
+    width: 14rem;
+    background:var(--pannel-background);
+    display: flex;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem;
+    overflow: hidden;
+    box-shadow: 2px 2px 10px gray;
+}
+.skillspart .allcontaint .content .card img{
+    align-self: flex-start;
+    height: 6rem;
+    margin-top: 0.3rem;
+    width: 6rem;
+    border-radius: 50%;
+}
+.skillspart .allcontaint .content .card h3,h4{
+    width: 100%;
+    display: flex;
+    align-self: center;
+    padding: 0rem 1rem;
+    align-items: center;
+    justify-content: center;
+}
+.skillspart .allcontaint .content .card h4{
+    color: rgb(69, 68, 68);
+}
+.skillspart .allcontaint .content .card a{
+    width: 90%;
+    height: 2rem;
+    border-radius: 20px;
+    background:rgba(244, 243, 243, 0.841);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.skillspart .allcontaint .content .card a:hover{
+    background:var(--buttonHover-color);
+    box-shadow: 1px 1px 5px gray;
+}
+
+
+
+
+.suggestionpart{
+    display: none;
+    min-width: 25%;
+    width: 25%;
+    height: 100%;
+    background: var(--pannel-background);
+}
+.suggestionpart a{
+    align-self: flex-start;
+    margin: 1rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0rem 1rem;
+    width: 80%;
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+
+
+
+
+
+.hoverwhite:hover{
+    background-color: white;
+    box-shadow: 1px 1px 5px gray;
+}
+
+
+
+#forMentors{
+    display: flex;
+}
+#forFindMatch, #forMySkills, #forMessage33{
+    display: none;
+}
+/* #mentors_butt{
+    background-color:;
+} */
+.suggestionpart{
+    display: none;
+}
+/* #find_match_butt{
+    background-color:white;
+} */
+/* #my_skills_butt{
+    background-color: white;
+} */
+ .flexclass{
+    display: flex;
+ }
+
+
+
+ /* .............................for setiing css ......................... */
+
+.skillspart .allcontaint .userimage{
+    height:17rem;
+    width: 17rem;
+    border-radius: 10px;
+    margin: 2rem;
+    background: var(--pannel-background);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+ }
+ .skillspart .allcontaint .userimage form{
+    display: flex;
+
+ }
+ .skillspart .allcontaint .userimage form input{
+    width: 8rem;
+    height: 2rem;
+    background-color: white;
+    border: 0;
+    box-shadow: 1px 1px 5px gray;
+    border-radius: 20px;
+ }
+ .skillspart .allcontaint .userimage form button{
+    width: 6rem;
+    height: 2rem;
+    background-color: rgba(234, 230, 230, 0.721);
+    box-shadow: 1px 1px 5px gray;
+    border-radius: 20px;
+    margin-left: 1rem;
+ }
+ .skillspart .allcontaint .userimage form button:hover,input:hover{
+    background-color:white;
+ }
+ .skillspart .allcontaint .userimage img{
+    height:14rem;
+    width: 14rem;
+    border-radius: 50%;
+ }

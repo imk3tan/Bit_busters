@@ -1,0 +1,215 @@
+:root {
+    --pannel-background:linear-gradient(to left,aqua,rgb(2, 200, 167) );
+    --buttonHover-color:rgb(240, 238, 238);
+    --button-background:linear-gradient(to left,rgb(0, 255, 255,0.5),rgb(2, 200, 167,0.6) ,rgb(2, 200, 167,0.6) ,rgb(2, 200, 167,0.6) );
+}
+/* :root {
+    --pannel-background:rgb(205, 201, 201);
+    --button-background:rgb(124, 243, 124);
+    --buttonHover-color:rgb(20, 232, 20);
+} */
+body{
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+a{
+    text-decoration: none;
+}
+.index_container{
+    padding: 0;
+    height: 100%;
+    display: flex;
+    width: 100%;
+}
+.index_container .rightpart{
+    height: 100%;
+    overflow: hidden;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:var(--pannel-background);
+}
+.index_container .rightpart .cir{
+    opacity: 0.8;
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.5px);
+    -webkit-backdrop-filter: blur(10.5px);
+    border: 1px solid rgba(255, 255, 255, 0.58); 
+}
+.cir1{
+    margin-left:23%;
+    margin-top: 30%;
+    height: 15rem;
+    width: 15rem;
+}
+.cir2{
+    height: 10rem;
+    width: 10rem;
+    margin-top: -20%;
+    margin-left: -20%;
+}
+.cir3{
+    height: 7rem;
+    width: 7rem;
+    margin-left: 25%;
+    margin-top: -15%;
+}
+.index_container .rightpart .sign_up{
+    height: auto;
+    width: 70%;
+    background: transparent;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.index_container .rightpart .sign_up h1,p{
+    width: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    height: 2rem;
+}
+.index_container .rightpart .sign_up a{
+    height: 3rem;
+    width: 60%;
+    z-index: 1;
+}
+.index_container .rightpart .sign_up button{
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    color: black;
+    border: 0;
+    border-radius: 30px;
+    font-size: 1rem;
+}
+.index_container .rightpart .sign_up button:hover,form button:hover{
+    background-color: rgb(240, 238, 238);
+    font-size: 1.1rem;
+}
+.index_container .rightpart .sign_up form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    z-index:1;
+}
+.index_container .rightpart .sign_up form input{
+    width: 100%;
+    height: 2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    border: 0;
+    color: white;
+    font-display:auto;
+    margin: 1rem 0rem;
+    background-color:rgba(255, 255, 255, 0.548);
+}
+.index_container .rightpart .sign_up form button{
+    height: 3rem;
+    min-height: 3rem;
+    max-height: 3rem;
+    width: 60%;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    color: black;
+    border: 0;
+    border-radius: 30px;
+    font-size: 1rem;
+}
+
+
+.index_container .leftpart,.rightpart{
+    height: 100%;
+    overflow: hidden;
+    width: 50%;
+}
+.index_container .leftpart .top{
+     width: 70%;
+     display: flex;
+}
+.index_container .leftpart .top img{
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    margin: 1rem 0.5rem 1rem 1rem;
+}
+.index_container .leftpart .top h1{
+    height: 5rem;
+    width:50%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    color: gray;
+}
+.index_container .leftpart .bottum{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: space-evenly;
+}
+.index_container .leftpart .bottum h2{
+    font-size: 3rem;
+    height: 2rem;
+}
+.index_container .leftpart .bottum form{
+    margin-top: -30%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.index_container .leftpart .bottum form input{
+    width: 55%;
+    height: 2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    border: 0;
+    margin: 1rem 0rem;
+    background-color:rgba(179, 198, 201, 0.363);
+}
+.index_container .leftpart .bottum form .button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.index_container .leftpart .bottum form button{
+    height: 3rem;
+    width: 40%;
+    background: var(--button-background);
+    color: black;
+    border: 0;
+    border-radius: 30px;
+    font-size: 1rem;
+}
+.index_container .leftpart .bottum form button:hover{
+    background-color: var(--buttonHover-color);
+    font-size: 1.1rem;
+}
+
+
+
+.err{
+    width: 100%;
+    color: red;
+    display:none;
+    align-items: center;
+    justify-content: center;
+}
+    
