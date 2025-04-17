@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" href="/images/icon.jpg">
+    <title style="display: none;"><%= pn%>.Register</title>
+</head>
+<style>
+    .index_container .leftpart form{
+        width: 100%;
+        height: 100%;
+    }
+    .index_container .leftpart form .parts1{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .index_container .leftpart form .parts1 .bottum{
+        width: 100%;
+        height: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+    .index_container .leftpart form .parts1 .bottum input,.parts2 input,select{
+        width: 65%;
+        height: 2rem;
+        padding: 0.5rem 1rem;
+        border-radius: 30px;
+        border: 0;
+        background-color:rgba(179, 198, 201, 0.363);
+    }
+    .index_container .leftpart form .parts2 input,select{
+        width: 60%;
+        height: 2rem;
+        padding: 0.5rem 1rem;
+        border-radius: 30px;
+        border: 0;
+        background-color:rgba(179, 198, 201, 0.363);
+    }
+    .index_container .leftpart form .parts1 .bottum a,.parts2 button,a{
+        height: 3rem;
+        width: 40%;
+        background: linear-gradient(to left,rgb(0, 255, 255,0.5),rgb(2, 200, 167,0.6) ,rgb(2, 200, 167,0.6) ,rgb(2, 200, 167,0.6) );
+        color: black;
+        border: 0;
+        border: 1px solid gray;
+        margin-left: 0.5rem;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.6rem;
+    }
+    .index_container .leftpart form .parts1 .bottum a:hover,.parts2 button:hover,a:hover{
+        background-color: rgb(240, 238, 238);
+        font-size: 1.8rem;
+    }
+    .index_container .leftpart form .parts2{
+        display: none;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+    .index_container .leftpart form .parts2 .showcase{
+        width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .index_container .leftpart form .parts2 .showcase p{
+        height: 3rem;
+        width: auto;
+        margin: 1rem;
+        color: black;
+        border-radius: 5px;
+        padding: 0 0.5rem;
+        background: linear-gradient(to left,rgb(0, 255, 255,0.3),rgb(2, 200, 167,0.4) ,rgb(2, 200, 167,0.4) ,rgb(2, 200, 167,0.4) );
+    }
+    
+</style>
+<body>
+    <div class="index_container">
+
+        <div class="rightpart">
+            <div class="cir cir1"></div>
+            <div class="cir cir2"></div>
+            <div class="cir cir3"></div>
+            <div class="sign_up" id="signup_con">
+                <h1 style="font-size:3rem;">Hello, Friend!</h1>
+                <p style="font-size:1.5rem;">Enter your personal details and start journey with us.</p>
+                <!-- <a href="#"><button id="sign_up">Sign Up</button></a> -->
+            </div>
+        </div>
+
+        <div class="leftpart">
+
+            <form action="/check1" method="post">  <!-- this css is writen in this file itself  -->
+                <div class="parts1" id="parts1">
+                    <div class="top">
+                        <img src="images/logo.jpg" alt="logo">
+                        <h1><%= pn%></h1>
+                    </div>
+                    <div class="bottum">
+                        <input name="name" id="name" placeholder="Enter Your full Name" type="text" required >
+
+                        <div class="err" id="err001">Name Already In Use  &#9888;</div>
+                        <input name="profilename" id="profilename" type="text" placeholder="Enter a unique profile name" required>
+                        <input name="email" id="email" type="email" value="<%= email %>" disabled>
+                        <input name="password" id="password" type="password" placeholder="Create Your Password" required>
+                        <input name="gender" id="gender" type="text" placeholder="Gender : M / F / O" required>
+                        <input name="otp" id="otp" type="text" placeholder="Enter Your Otp" required>
+                        <a type="next" id="next">Next</a>
+                    </div>
+                </div>
+
+                <div class="parts2" id="parts2">
+
+                    <input list="brow" id="takeskillhave" name="skillhave" placeholder="Choose Skills You Have" >
+                    <a style="width: 4rem; font-size:15px" id="addskill1">Add +</a>
+                    <datalist id="brow">
+                        <% for(let f of field){ %>
+                            <option value="<%= f %>">
+                        <%}%>
+                    </datalist> 
+                    <input name="AllSkillHave" id="skillhavefield" style="visibility: hidden; height:0rem;">
+                    <div class="showcase" id="showcase1"></div>
+
+
+                    <input list="brow" id="takeskillwant" name="skillwant" placeholder="Choose Skills Want To Learn.">
+                    <a style="width: 4rem; font-size:15px" id="addskill2">Add +</a>
+                    <datalist id="brow">
+                        <% for(let f of field){ %>
+                            <option value="<%= f %>">
+                        <%}%>
+                    </datalist> 
+                    <input name="AllSkillWant" id="skillwantfield" style="visibility: hidden; height:0rem;">
+                    <div class="showcase" id="showcase2"></div>
+
+
+                    
+                    <input list="brow" id="language" name="language" placeholder="Choose Language Want.">
+                    <a style="width: 4rem; font-size:15px" id="addlanguage">Add +</a>
+                    <datalist id="brow">
+                        <option value="Hindi"></option>
+                        <option value="English"></option>
+                        <option value="Tamil"></option>
+                        <option value="Telugu"></option>
+                        <option value="Marathi"></option>
+                    </datalist> 
+                    <input name="language" id="languageField" style="visibility: hidden; height:0rem;">
+                    <div class="showcase" id="showcase3"></div>
+
+                    
+
+                   
+                    <a type="next" id="previous" style="margin-right: 1rem;">Previous</a>
+                    <button type="submit" id="sub" disabled style="display: none;">Submit</button>
+                    <button type="submit" id="subbutt">Submit</button>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+</body>
+<script>
+    let next=document.getElementById("next");
+    let previous=document.getElementById('previous');
+    let parts1=document.getElementById("parts1");
+    let parts2=document.getElementById("parts2");
+
+    next.addEventListener("click",()=>{
+        parts1.style.display='none';
+        parts2.style.display="flex";
+    });
+    previous.addEventListener("click",()=>{
+        parts1.style.display='flex';
+        parts2.style.display="none";
+    });
+
+    let addskill1=document.getElementById('addskill1');
+    let takeskillhave=document.getElementById('takeskillhave');
+    let skillhavefield=document.getElementById('skillhavefield');
+    let showcase1=document.getElementById('showcase1');
+    addskill1.addEventListener("click",()=>{
+        if(takeskillhave.value !=""){
+            skillhavefield.value+=takeskillhave.value+" ,";
+            let p=document.createElement('p');
+            p.textContent=takeskillhave.value;
+            showcase1.appendChild(p);
+            takeskillhave.value='';
+        } 
+    });
+
+    let addskill2=document.getElementById('addskill2');
+    let takeskillwant=document.getElementById('takeskillwant');
+    let skillwantfield=document.getElementById('skillwantfield');
+    let showcase2=document.getElementById('showcase2');
+    addskill2.addEventListener("click",()=>{
+        if(takeskillwant.value !=""){
+            skillwantfield.value+=takeskillwant.value+" , ";
+            let p=document.createElement('p');
+            p.textContent=takeskillwant.value;
+            showcase2.appendChild(p);
+            takeskillwant.value='';
+        } 
+    });
+
+    let addskill22=document.getElementById('addlanguage');
+    let takeskillwant2=document.getElementById('language');
+    let skillwantfield2=document.getElementById('languageField');
+    let showcase22=document.getElementById('showcase3');
+    addskill22.addEventListener("click",()=>{
+        if(takeskillwant2.value !=""){
+            skillwantfield2.value+=takeskillwant2.value+" , ";
+            let p=document.createElement('p');
+            p.textContent=takeskillwant2.value;
+            showcase22.appendChild(p);
+            takeskillwant2.value='';
+        } 
+    });
+
+    
+let word=document.getElementById('profilename');
+let err001=document.getElementById('err001');
+let subbutt=document.getElementById('subbutt');
+let sub=document.getElementById('sub');
+word.addEventListener("input",async (event)=>{
+    console.log(event.target.value);
+    let data=await getjsondata();
+    for(let d of data){
+        if(event.target.value==d.profilename.slice(0,event.target.value.length)){
+            err001.style.display='flex';
+            sub.style.display='flex';
+            subbutt.style.display='none';
+            break;
+        }
+        else{
+            err001.style.display='none';
+            sub.style.display='none';
+            subbutt.style.display='flex';
+        }
+    }
+});
+
+
+async function getjsondata(){  
+    return new Promise ((resolve,reject)=>{
+        fetch('js/username.json')
+        .then((response) => response.json())
+        .then((json) => {
+            resolve(json);
+        });
+    })
+}
+</script>
+</html>

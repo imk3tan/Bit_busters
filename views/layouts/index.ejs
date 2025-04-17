@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="icon" href="/images/icon.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <title style="display: none;"><%=pn%>.Login</title>
+</head>
+<style>
+    
+#toggel_left,#toggel_right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#toggel_left{
+    display: none;
+}
+.index_container .rightpart{
+    position: absolute;
+    transition: 1s;
+}
+</style>
+<body>
+    <div class="index_container">
+
+        <div class="leftpart">
+            <div class="top">
+                <img src="images/icon.jpg" alt="logo">
+                <h1><%= pn%></h1>
+            </div>
+            <div class="bottum">
+                <h2>Login to Your Account</h2>
+                <form action="/check" method="post">
+                    
+                    <div class="err" id="err001">Wrong Email Entered &#9888;</div>
+                    <input name="email" id="email" type="email" placeholder="Enter Your Email" required style="min-height: 3rem;">
+                    
+                    <div class="err" id="errr002">Wrong Password &#9888;</div>
+                    <input name="password" id="password" type="password" placeholder="Password" required style="min-height: 3rem;">
+                    <div class="button" id="signinbutt">
+                        <button>Sign in</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        <div class="leftpart">
+            <div class="top">
+                <img src="images/icon.jpg" alt="logo">
+                <h1><%= pn%></h1>
+            </div>
+            <div class="bottum">
+                <h2>Create A New Account</h2>
+                <form action="/check" method="post">
+                    <div class="err" id="err1">Email Already In Use &#9888;</div>
+                    <input name="email" id="email1" type="email" placeholder="Enter Your Email" required style="min-height: 3rem;">
+                    
+                    <div class="button" id="signupbutt">
+                        <button type="submit" style="margin-top: 2rem;">Sign Up</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+        <div class="rightpart" id="slider">
+            <div class="cir cir1"></div>
+            <div class="cir cir2"></div>
+            <div class="cir cir3"></div>
+            <div class="sign_up" id="signup_con">
+                <h1 style="font-size:3rem;">New Here?</h1>
+                <p style="font-size:1.5rem; margin-top:4rem;">Sign up and discover a great amount of new opportunities!</p>
+                <a id="toggel_box1" style="margin-top: 2rem;"><button id="toggel_right">Log In</button></a>
+                <a id="toggel_box2"><button id="toggel_left">Sign Up</button></a>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+<script src="/js/index.js"></script>
+
+</body>
+</html>

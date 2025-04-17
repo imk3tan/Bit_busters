@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=pn%>.<%=userdata.profilename %></title>
+    <link rel="icon" href="/images/icon.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/user.css">
+</head>
+<body>
+    <div class="userpart">
+        <div class="alloptions">
+
+            <div class="userprofile">
+                <% if (userdata.profileImage== 'Null'){ %>
+                    <img src="/images/logo.jpg" alt="user image">
+                    <%}else{ %>
+                        <img src="<%= userdata.profileImage %>" alt="user image">
+                    <% } %>
+                <div class="data">
+                    <h3><%= userdata.profilename %></h3>
+                    <h5><%= userdata.email %></h5>
+                </div>
+            </div>
+
+            
+            <a id="my_skills_butt" class="hoverwhite"><h5><i class="fa-solid fa-book-open-reader" style="color: #303031;"></i> &nbsp; &nbsp;My Skills</h5></a>
+            <a id="find_match_butt" class="hoverwhite"><h5><i class="fa-solid fa-user-plus" style="color: #202122;"></i> &nbsp; &nbsp;Find Match</h5></a>
+            <a id="mentors_butt" class="hoverwhite"><h5><i class="fa-solid fa-face-smile-beam" style="color: #232325;"></i> &nbsp; &nbsp;Mentors</h5></a>
+            <a href="/user/set/<%= userdata.id %>" id="changeset_1" class="hoverwhite"><h5><i class="fa-solid fa-book-medical" style="color: #262627;"></i> &nbsp; &nbsp;Add Skills</h5></a>
+            <a id="message_but" class="hoverwhite"><h5><i class="fa-solid fa-message" style="color: #252627;"></i> &nbsp; &nbsp;Messages</h5></a>
+
+
+
+
+            <div class="bottum">
+                <a href="/user/set/<%= userdata.id %>" id="change" class="hoverwhite"><h5><i class="fa-solid fa-gear" style="color: #0c0d0d;"></i> &nbsp; &nbsp;Account Setting</h5></a>
+                <a href="/" class="hoverwhite"><h5><i class="fa-solid fa-arrow-right-from-bracket" style="color: #222325;"></i>&nbsp;&nbsp; Log Out</h5></a>
+            </div>
+        </div>
+    </div>
+
+
+
+<!-- ................................for the my skills section .......................... -->
+    <div class="skillspart" id="forMySkills">
+        <div class="allcontaint">
+            <div class="nav">
+                <h2>My Skills</h2>
+                <!-- <div class="allother">
+                     
+                </div> -->
+                <a class="mess" id="mess"><i class="fa-solid fa-message" style="color: #252627;"></i></a>
+            </div>
+
+            <div class="content" id="content">
+
+                <% for(let i of skill) { %>
+                    <% if(i != ""){ %>
+                        <div class="card" style="height:12rem; width:10rem;">
+                            <img src="/images/skill.jpg" alt="profile image">
+                            <h3><%= i %></h3>
+                        </div>
+                    <%}%>
+                <%}%>
+
+                <h3 style="width: 100%; margin-left:2rem;">Skills Want To Learn</h3>
+
+                <% for(let i of wants) { %>
+                    <% if(i != " "){ %>
+                        <div class="card" style="height:12rem; width:10rem;">
+                            <img src="/images/skill.jpg" alt="profile image">
+                            <h3><%= i %></h3>
+                        </div>
+                    <%}%>
+                <%}%>
+    
+            </div>
+
+        </div>
+    </div>
+    <div class="suggestionpart" id="messagebox">
+        <a class="hoverwhite" id="closemess"><h5><i class="fa-solid fa-arrow-right-from-bracket" style="color: #222325;"></i>&nbsp;&nbsp; Close</h5></a>
+    </div>
+<!-- ................................ for the find match  ............................ -->
+    <div class="skillspart" id="forFindMatch">
+        <div class="allcontaint">
+            <div class="nav">
+                <h2>Find Match</h2>
+                <div class="allother">
+                    <input list="brow" id="takeskillwant" name="skillwant" placeholder="Search By Username Or Skill">
+                    <a style="width: 3rem; font-size:15px" id="addskill"><i class="fa-solid fa-magnifying-glass" style="color: #212121;"></i></a>
+                    <datalist id="brow">
+                        <% for(let f of field){ %>
+                            <option value="<%= f %>">
+                        <%}%>
+                        <% for(let i of profilename){ %>
+                            <option value="<%= i.profilename %>"></option>
+                        <%}%>
+                    </datalist> 
+                </div>
+                <a class="mess" id="mess1"><i class="fa-solid fa-message" style="color: #252627;"></i></a>
+            </div>
+
+
+            <div class="content" id="content1">
+
+                <% for(let i of sugess) { %>
+                    <% if(i.profilename != userdata.profilename){ %>
+                        <div class="card">
+                            <% if (i.profileImage== 'Null'){ %>
+                                <img src="/images/logo.jpg" alt="user image">
+                            <%}else{ %>
+                                <img src="<%= i.profileImage %>" alt="user image">
+                            <% } %>
+                            
+                            <h3><%= i.profilename %></h3>
+
+                            <h4><%= i.skillshave %></h4>
+                            <a href="/connect/<%=userdata.id%>/<%=i.id%>">Connect</a>
+                        </div>
+                    <%}%>
+                <%}%>
+
+                <h2 style="width: 100%; margin-left:2rem; height:2rem;">All The Mentors </h2>
+
+                <% for(let i of allmentor) { %>
+                    <% if(i.profilename != userdata.profilename){ %>
+                        <div class="card">
+                            <% if (i.profileImage== 'Null'){ %>
+                                <img src="/images/logo.jpg" alt="user image">
+                            <%}else{ %>
+                                <img src="<%= i.profileImage %>" alt="user image">
+                            <% } %>
+                            
+                            <h3><%= i.profilename %></h3>
+
+                            <h4><%= i.skillshave %></h4>
+                            <a href="/connect/<%=userdata.id%>/<%=i.id%>">Connect</a>
+                        </div>
+                    <%}%>
+                <%}%>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="suggestionpart" id="messagebox1">
+        <a class="hoverwhite" id="closemess1"><h5><i class="fa-solid fa-arrow-right-from-bracket" style="color: #222325;"></i>&nbsp;&nbsp; Close</h5></a>
+    </div>
+
+<!-- .............................for the mentors section ............................... -->
+    <div class="skillspart" id="forMentors">
+        <div class="allcontaint">
+            <div class="nav">
+                <h2>Mentors</h2>
+                <div class="allother">
+                    
+                    <input list="brow" id="takeskillwant2" name="skillwant" placeholder="Search By Username Or Skill">
+                    
+                    <a style="width: 3rem; font-size:15px" id="addskill2"><i class="fa-solid fa-magnifying-glass" style="color: #212121;"></i></a>
+                    <datalist id="brow">
+                        <% for(let f of field){ %>
+                            <option value="<%= f %>">
+                        <%}%>
+                        <% for(let i of profilename){ %>
+                            <option value="<%= i.profilename %>"></option>
+                        <%}%>
+                    </datalist> 
+                </div>
+                <a class="mess" id="mess2"><i class="fa-solid fa-message" style="color: #252627;"></i></a>
+            </div>
+
+            <div class="content" id="content_2">
+
+                <% for(let i of allmentor) { %>
+                    <% if(i.profilename != userdata.profilename){ %>
+                        <div class="card">
+                            <% if (i.profileImage== 'Null'){ %>
+                                <img src="/images/logo.jpg" alt="user image">
+                            <%}else{ %>
+                                <img src="<%= i.profileImage %>" alt="user image">
+                            <% } %>
+                            
+                            <h3><%= i.profilename %></h3>
+
+                            <h4><%= i.skillshave %></h4>
+                            <a href="/connect/<%=userdata.id%>/<%=i.id%>">Connect</a>
+                        </div>
+                    <%}%>
+                <%}%>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="suggestionpart" id="messagebox2">
+        <a class="hoverwhite" id="closemess2"><h5><i class="fa-solid fa-arrow-right-from-bracket" style="color: #222325;"></i>&nbsp;&nbsp; Close</h5></a>
+    </div>
+
+
+<!-- .............................for the message section ............................... -->
+<div class="skillspart" id="forMessage33">
+    <div class="allcontaint">
+        <div class="nav">
+            <h2>Messages</h2>
+            <!-- <div class="allother">
+                
+                <input list="brow" id="takeskillwant233" name="skillwant" placeholder="Search By Username Or Skill">
+                
+                <a style="width: 3rem; font-size:15px" id="addskill233"><i class="fa-solid fa-magnifying-glass" style="color: #212121;"></i></a>
+                <datalist id="brow">
+                    <% for(let f of field){ %>
+                        <option value="<%= f %>">
+                    <%}%>
+                    <% for(let i of profilename){ %>
+                        <option value="<%= i.profilename %>"></option>
+                    <%}%>
+                </datalist> 
+            </div> -->
+            <a class="mess" id="mess233"><i class="fa-solid fa-message" style="color: #252627;"></i></a>
+        </div>
+
+        <div class="content" id="content_233">
+
+            <% for(let i of dataToShow) { %>
+                    <div class="card">
+                        <% if (i.profileImage== 'Null'){ %>
+                            <img src="/images/logo.jpg" alt="user image">
+                        <%}else{ %>
+                            <img src="<%=i.profileImage%>" alt="user image">
+                        <% } %>
+                        
+                        <h3><%= i.profilename %></h3>
+
+                        <h4><%= i.skillshave %></h4>
+                        <a>Accept</a>
+                        <a>Reject</a>
+                    </div>
+            <%}%>
+
+        </div>
+
+    </div>
+</div>
+<div class="suggestionpart" id="messagebox2">
+    <a class="hoverwhite" id="closemess2"><h5><i class="fa-solid fa-arrow-right-from-bracket" style="color: #222325;"></i>&nbsp;&nbsp; Close</h5></a>
+</div>
+
+    <script src="/js/user.js"></script>
+</body>
+<script>
+    let takeskillwant2=document.getElementById('takeskillwant2');
+    let content=document.getElementById('content_2').children;
+
+    takeskillwant2.addEventListener("input",(event)=>{
+        for(let i of content){
+            let n=event.target.value.length;
+            console.log(i);
+            let charr=i.children[2].textContent.split(',');
+            for (let j of charr){
+                if(j.slice(0,n)==event.target.value){
+                    i.style.display='flex';
+                    i.classList.add('flexclass');
+                    break;
+                }
+                else if(i.children[1].textContent.slice(0,n)==event.target.value){
+                    i.style.display='flex';
+                    break;
+                }
+                else{
+                    i.style.display='none';
+                }
+
+            }
+        }
+    });
+
+    let takeskillwant=document.getElementById('takeskillwant');
+    let content1=document.getElementById('content').children;
+
+    takeskillwant.addEventListener("input",(event)=>{
+        for(let i of content1){
+            let n=event.target.value.length;
+            console.log(i);
+            let charr=i.children[2].textContent.split(',');
+            for (let j of charr){
+                if(j.slice(0,n)==event.target.value){
+                    i.style.display='flex';
+                    i.classList.add('flexclass');
+                    break;
+                }
+                else if(i.children[1].textContent.slice(0,n)==event.target.value){
+                    i.style.display='flex';
+                    break;
+                }
+                else{
+                    i.style.display='none';
+                }
+
+            }
+        }
+    });
+</script>
+</html>
